@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import apiCall from './services/api';
+import Season from './components/season';
+import React, {useState} from "react";
 
 function App() {
+  const [state, setstate] = useState([])
+  const call =apiCall("episodes?series=Better+Call+Saul");
+  call.then(x=> setstate(x))
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Breaking Bad</h1>
+       <Season num = "13" episodes = {state}/>
+      <h1>Better Call Saul</h1>
+        <Season num = "1"/>
     </div>
   );
 }
