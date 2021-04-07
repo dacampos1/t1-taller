@@ -16,9 +16,8 @@ function Home(props) {
   function iterate(state,code){
     if(state){
       const keys = Object.keys(state);
-      console.log(keys, openSeason)
       return keys.map(x=>(
-        <Season num={x} episodes= {state[x]} open={(x+code)===openSeason?true:false}/>))
+        <Season num={x} episodes= {state[x]} key={x+code}  open={(x+code)===openSeason?true:false}/>))
     }
   }
 

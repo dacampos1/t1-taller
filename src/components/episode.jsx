@@ -29,7 +29,7 @@ function Episode(props) {
             <h3>Personajes:</h3>
             <ul>
               {stateEpisode[0]["characters"].map(x=>
-                (<h5><a href={'/character/' + x}>{x}</a></h5>))}
+                (<h5 key={x["char_id"]}><a href={'/character/' + x}>{x}</a></h5>))}
             </ul>
           
           </div>)

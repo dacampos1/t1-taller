@@ -30,13 +30,13 @@ function Character(props) {
             <h3>{'Temporadas Breaking Bad: '}</h3>
             <ul className="horizontalList">
             {stateCharacter?stateCharacter[0]["appearance"].map(x=>
-            (<li><a href={'/'+x+'B'}>{x}</a></li>)):<div/>
+            (<li key={x+'B'}><a href={'/'+x+'B'}>{x}</a></li>)):<div/>
             }
             </ul>
             <h3>{'Temporadas Better Call Saul: '}</h3>
             <ul className="horizontalList">
             {stateCharacter[0]["better_call_saul_appearance"].map(x=>
-            (<li><a href={'/'+x+'S'}>{x}</a></li>))
+            (<li key={x+'S'}><a href={'/'+x+'S'}>{x}</a></li>))
             }
             </ul>
         </div>)

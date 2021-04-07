@@ -14,8 +14,8 @@ function Season(props) {
     <div className="seasonDiv"> 
         <h3 onClick={switchShow}>Temporada {num}</h3>
         {show&&Array.isArray(sorted_episodes)?sorted_episodes.map(
-          x=>(<h5>
-              <a key={x["episode_id"]} href={'/episode/'+x["episode_id"]} >
+          x=>(<h5 key={x["episode_id"]} >
+              <a href={'/episode/'+x["episode_id"]} >
                 {x["episode"] + " - "+x["title"]}
               </a>
               </h5>)):<div/>
