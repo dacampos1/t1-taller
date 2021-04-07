@@ -25,12 +25,10 @@ function Search(props) {
         }
     }
     return (
-        <div className="row">
-            <div className="column">
-                <h1 className="seasonDiv"><a href="/">T1 Taller</a></h1>
-            </div>
-            <div className="column">
-            <AsyncSelect name="search"  className="busqueda" placeholder="Buscar personajes..." cacheOptions defaultOptions value={selectedOption} onInputChange={(e)=>onSearchChange(e)} onChange={(e)=>onSelected(e)} loadOptions={chargeData} />
+        <div className="topnav">
+            <a className="active" href="/">T1 Taller</a>
+            <div className="searchcontainer">
+            <AsyncSelect name="search"  className="busqueda" placeholder="Buscar personajes..." cacheOptions defaultOptions value={selectedOption} onInputChange={(e)=>onSearchChange(e)} onChange={(e)=>onSelected(e)} loadOptions={chargeData}   noOptionsMessage={()=> "Sin resultados"} loadingMessage={()=> "Buscando..."} />
             </div>
         </div>
     )
