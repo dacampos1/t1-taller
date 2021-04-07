@@ -9,3 +9,4 @@ async function apiCall(string) {
 
 
 export default  apiCall; 
+

@@ -1,12 +1,12 @@
 import React, {useState}  from 'react';
-import apiCall from '../services/api';
+import apiCallPagination from '../services/pagination';
 import AsyncSelect from 'react-select/async';
 
 
 function Search(props) {   
     const [selectedOption, setSelectedOption] = useState('')
     function chargeData(inputValue, callback){
-        const callCharacters =apiCall("characters?name="+inputValue);
+        const callCharacters =apiCallPagination(inputValue,0,[]);
         callCharacters.then((data)=>{
             const tempArray=[];
             data.forEach((x)=>{
