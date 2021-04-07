@@ -11,7 +11,7 @@ function Season(props) {
     setShow(!show)
   }
   return (
-    <div> 
+    <div className="seasonDiv"> 
         <h3 onClick={switchShow}>Temporada {num}</h3>
         {show&&Array.isArray(sorted_episodes)?sorted_episodes.map(
           x=>(<h5>

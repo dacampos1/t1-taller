@@ -9,5 +9,7 @@
 .column {
   flex: 50%;
   margin: 20px;
-  background-color:lightgray;
+  background-color:#093009;
 }
+
+.seasonDiv { cursor: pointer; }
