@@ -8,9 +8,14 @@
 .image{
     width: 25%;
     height: auto;
+    padding-top: 50px;
 }
 
 .horizontalList li {
     display: inline;
     padding: 20px;
+}
+.busqueda {
+  background-color: gray;
+  color: black;
 }

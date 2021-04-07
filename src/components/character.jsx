@@ -7,7 +7,9 @@ function Character(props) {
     const [stateCharacter, setStateCharacter] = useState()
     const callCharacter =apiCall("characters?name="+props.match.params.name);
     callCharacter.then(x=> setStateCharacter(x))
-
+    const [stateQuotes, setStateQuotes] = useState()
+    const callQuotes =apiCall("quote?author="+props.match.params.name);
+    callQuotes.then(x=> setStateQuotes(x))
     function checkInfo(){
       if(stateCharacter){
         if(stateCharacter[0]){
@@ -37,6 +39,12 @@ function Character(props) {
             <ul className="horizontalList">
             {stateCharacter[0]["better_call_saul_appearance"].map(x=>
             (<li key={x+'S'}><a href={'/'+x+'S'}>{x}</a></li>))
+            }
+            </ul>
+            <h3>{'Citas: '}</h3>
+            <ul>
+            {stateQuotes?stateQuotes.map(x=>
+            (<li key={x["quote_id"]}>{x["quote"]}</li>)):<div/>
             }
             </ul>
         </div>)
