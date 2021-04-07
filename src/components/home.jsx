@@ -2,6 +2,7 @@ import apiCall from '../services/api';
 import Season from './season';
 import React, {useState} from "react";
 import _ from 'underscore';
+import '../styles/home.css';
 
 function Home(props) {
   const [stateSaul, setStateSaul] = useState([])
@@ -22,12 +23,15 @@ function Home(props) {
   }
 
   return (
-    <div className="Home">
-      <h1>Breaking Bad</h1>
-      {iterate(stateBreaking,"B")}
-      <h1>Better Call Saul</h1>
-      {iterate(stateSaul,"S")}
-
+    <div className="row">
+        <div className="column">
+            <h1>Breaking Bad</h1>
+            {iterate(stateBreaking,"B")}
+        </div>
+        <div className="column">
+            <h1>Better Call Saul</h1>
+            {iterate(stateSaul,"S")}
+        </div>
     </div>
   );
 }

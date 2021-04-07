@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+.image{
+    width: 25%;
+    height: auto;
+}
+
+.horizontalList li {
+    display: inline;
+    padding: 20px;
+}
