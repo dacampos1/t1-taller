@@ -25,32 +25,11 @@ function Episode(props) {
             <h3>Personajes:</h3>
             <ul>
             {stateEpisode?stateEpisode[0]["characters"].map(x=>
-            (<h5 onClick={()=>selectCharacter(x)}>{x}</h5>)):<div/>
+            (<h5><a href={'/character/' + x}>{x}</a></h5>)):<div/>
             }
             </ul>
         </div>
-        <div className={stateCharacter?"column":"none"}>
-            <img className="image" alt={stateCharacter?stateCharacter[0]["name"]:""} src={stateCharacter?stateCharacter[0]["img"]:""}/>
-            <h3>{stateCharacter?'Nombre: '+stateCharacter[0]["name"]:""}</h3>
-            <h3>{stateCharacter?'Ocupación: '+stateCharacter[0]["occupation"]:""}</h3>
-            <h3>{stateCharacter?'Estado: '+stateCharacter[0]["status"]:""}</h3>
-            <h3>{stateCharacter?'Apodo: '+stateCharacter[0]["nickname"]:""}</h3>
-            <h3>{stateCharacter?'Id: '+stateCharacter[0]["char_id"]:""}</h3>
-            <h3>{stateCharacter?'Interpretado: '+stateCharacter[0]["portrayed"]:""}</h3>
-            <h3>{stateCharacter?'Categoría: '+stateCharacter[0]["category"]:""}</h3>
-            <h3>{stateCharacter?'Temporadas Breaking Bad: ':""}</h3>
-            <ul className="horizontalList">
-            {stateCharacter?stateCharacter[0]["appearance"].map(x=>
-            (<li><a href={'/'+x+'B'}>{x}</a></li>)):<div/>
-            }
-            </ul>
-            <h3>{stateCharacter?'Temporadas Better Call Saul: ':""}</h3>
-            <ul className="horizontalList">
-            {stateCharacter?stateCharacter[0]["better_call_saul_appearance"].map(x=>
-            (<li><a href={'/'+x+'S'}>{x}</a></li>)):<div/>
-            }
-            </ul>
-        </div>
+
     </div>
     
   );
