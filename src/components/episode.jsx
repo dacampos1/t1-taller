@@ -25,7 +25,7 @@ function Episode(props) {
             <h3>{'Temporada: '+stateEpisode[0]["season"]}</h3>
             <h3>{'Episodio: '+stateEpisode[0]["episode"]}</h3>
             <h3>{'Id: '+stateEpisode[0]["episode_id"]}</h3>
-            <h3>{'Fecha de emisión: '+stateEpisode[0]["air_date"]}</h3>
+            <h3>{'Fecha de emisión: '+(stateEpisode[0]["air_date"].split("T")[0])}</h3>
             <h3>Personajes:</h3>
             <ul>
               {stateEpisode[0]["characters"].map(x=>
